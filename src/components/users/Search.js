@@ -1,19 +1,19 @@
-import React, { useState, useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
-import classes from './CSS/Search.module.css'
+import React, { useState, useContext } from 'react';
+import GithubContext from '../../context/github/githubContext';
+import classes from './CSS/Search.module.css';
 
 const Search = () => {
   const githubContext = useContext(GithubContext);
-  const { dark } = githubContext
-  const [text, setText] = useState("");
+  const { dark } = githubContext;
+  const [text, setText] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (text === "") {
+    if (text === '') {
       return null;
     }
     githubContext.searchUsers(text);
-    setText("");
+    setText('');
   };
 
   const onChange = (e) => setText(e.target.value);
@@ -35,7 +35,7 @@ const Search = () => {
           className='btn btn-dark btn-block'
         />
       </form>
-      {githubContext.users.length > 0 && (
+      {githubContext.userInfo.length > 0 && (
         <button
           className='btn btn-light btn-block'
           onClick={githubContext.clearUsers}

@@ -1,5 +1,4 @@
 import {
-  SEARCH_USERS,
   SET_LOADING,
   GET_USER,
   CLEAR_USERS,
@@ -8,27 +7,19 @@ import {
   SET_EMPTYSEARCH,
   SET_DARKTHEME,
   SET_LIGHTTHEME,
-  USER_INFO
+  USER_INFO,
 } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
-    case SEARCH_USERS:
+    case USER_INFO:
       return {
         ...state,
-        users: action.payload,
+        userInfo: action.payload,
         loading: false,
         usersFound: true,
         emptySearch: false,
       };
-      case USER_INFO:
-        return {
-          ...state,
-          userInfo: action.payload,
-          loading:false,
-          usersFound: true,
-          emptySearch: false,
-        }
     case SET_DARKTHEME:
       return {
         ...state,
@@ -60,7 +51,7 @@ export default (state, action) => {
     case CLEAR_USERS:
       return {
         ...state,
-        users: [],
+        userInfo: [],
         loading: false,
         usersFound: true,
         emptySearch: false,

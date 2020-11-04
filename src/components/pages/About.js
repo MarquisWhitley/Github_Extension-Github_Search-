@@ -14,9 +14,25 @@ const About = () => {
             account.
           </em>
         </p>
-        
+
         <br />
-        <p>Version: 1.3.0</p>
+        <p className={classes.version}>Version: 1.3.2</p>
+        <br />
+        <br />
+        <div className={classes.imgContainer}>
+          <div className={classes.contents}>
+            <div className={classes.img1}></div>
+            <h4>Home Page</h4>
+          </div>
+          <div className={classes.contents}>
+            <div className={classes.img2}></div>
+            <h4>Search Users</h4>
+          </div>
+          <div className={classes.contents}>
+            <div className={classes.img3}></div>
+            <h4>User</h4>
+          </div>
+        </div>
       </div>
     </Fragment>
   );

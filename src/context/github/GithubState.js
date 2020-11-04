@@ -3,7 +3,6 @@ import axios from 'axios';
 import GithubContext from './githubContext';
 import GithubReducer from './githubReducer';
 import {
-  SEARCH_USERS,
   SET_LOADING,
   GET_USER,
   CLEAR_USERS,
@@ -17,9 +16,8 @@ import {
 
 const GithubState = (props) => {
   const initialState = {
-    users: [],
     user: {},
-    userInfo: {},
+    userInfo: [],
     repos: [],
     loading: false,
     usersFound: true,
@@ -40,17 +38,14 @@ const GithubState = (props) => {
         `https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
       );
 
+      const res2Data = [];
       for (let key of res.data.items) {
         const res2 = await axios.get(
           `https://api.github.com/users/${key.login}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
         );
-        dispatch({ type: USER_INFO, payload: res2.data});
+        res2Data.push(res2.data);
       }
-
-      dispatch({
-        type: SEARCH_USERS,
-        payload: res.data.items,
-      });
+      dispatch({ type: USER_INFO, payload: res2Data });
 
       if (res.data.items.length === 0) {
         dispatch({ type: SET_USERSFOUND });
@@ -67,7 +62,6 @@ const GithubState = (props) => {
     const res = await axios.get(
       `https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
-    console.log(res);
 
     dispatch({
       type: GET_USER,
@@ -113,7 +107,6 @@ const GithubState = (props) => {
   return (
     <GithubContext.Provider
       value={{
-        users: state.users,
         user: state.user,
         userInfo: state.userInfo,
         repos: state.repos,

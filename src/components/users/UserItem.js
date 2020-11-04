@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import GithubContext from '../../context/github/githubContext';
 
-const UserItem = ({ user: { login, avatar_url } }) => {
+const UserItem = ({
+  user: { login, avatar_url },
+  hireable,
+  followers,
+  following,
+}) => {
   const githubContext = useContext(GithubContext);
-  const { dark, userInfo } = githubContext;
+  const { dark } = githubContext;
 
-  const { hireable, followers, following } = userInfo;
+  // const { hireable, followers, following } = userInfo;
 
   return (
     <div className={dark ? 'dark card text-center' : 'card text-center'}>
