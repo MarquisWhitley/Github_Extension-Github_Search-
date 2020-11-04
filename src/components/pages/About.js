@@ -14,6 +14,7 @@ const About = () => {
             account.
           </em>
         </p>
+        
         <br />
         <p>Version: 1.3.0</p>
       </div>

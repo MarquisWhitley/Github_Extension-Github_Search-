@@ -4,7 +4,7 @@ import classes from './CSS/Search.module.css'
 
 const Search = () => {
   const githubContext = useContext(GithubContext);
-
+  const { dark } = githubContext
   const [text, setText] = useState("");
 
   const onSubmit = (e) => {
@@ -27,7 +27,7 @@ const Search = () => {
           placeholder='Search Users...'
           value={text}
           onChange={onChange}
-          className={classes.searchInput}
+          className={dark ? classes.darkSearchInput : classes.searchInput}
         />
         <input
           type='submit'

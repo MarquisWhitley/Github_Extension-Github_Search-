@@ -27,10 +27,11 @@ body {
   background-color: #fff;
   color: #333;
 }
-.dark body {
+.dark {
   background-color: rgb(18, 16, 31);
-  color: rgb(51, 51, 51);
+  color: rgb(212, 212, 212);
 }
+
 .darkApp {
   background-color: rgb(8, 8, 8);
 }

@@ -17,3 +17,19 @@
     border-bottom: 2px solid #6200EE;
     outline: none;
 }
+
+.darkSearchInput {
+  display: block;
+  margin-top: 0.3rem;
+  color: #e7e7e7;
+  border: none;
+  border-bottom: 2px solid #03DAC6;
+  background-color: transparent;
+}
+
+.darkSearchInput:focus {
+  background-color: #89fdf293;
+  border: none;
+  border-bottom: 2px solid #03DAC6;
+  outline: none;
+}
