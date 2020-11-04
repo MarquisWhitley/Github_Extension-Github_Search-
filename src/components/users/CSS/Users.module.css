@@ -1,0 +1,16 @@
+.grid {
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+    background-color: rgb(233, 233, 233);
+}
+.darkGrid {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(35, 39, 48);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+}

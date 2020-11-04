@@ -1,0 +1,1 @@
+I've added a Dark theme and a Light theme towards this project without the use of Material UI

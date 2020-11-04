@@ -1,0 +1,19 @@
+.form input {
+  margin: 1.2rem 0;
+}
+
+.searchInput {
+  display: block;
+  margin-top: 0.3rem;
+  color: rgb(0, 24, 41);
+  border: none;
+  border-bottom: 2px solid #6200EE;
+  background-color: transparent;
+}
+
+.searchInput:focus {
+    background-color: #3600b338;
+    border: none;
+    border-bottom: 2px solid #6200EE;
+    outline: none;
+}
